@@ -6,7 +6,7 @@ function Artpiece({artPieceData}) {
     <div>
         <h1>{artPieceData.culture}</h1>
         <h2>{artPieceData.title}</h2>
-        <div>Image id: {artPieceData.images[0].imageid}</div>
+        {/* <img src={artPieceData.images[0].map(({images, iiifbaseuri}) => ({images: iiifbaseuri}))} alt="{artPieceData.title}" /> */}
     
     </div>
   )
