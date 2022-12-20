@@ -1,10 +1,10 @@
 import React from 'react'
 
 function Artpiece({artPieceData}) {
-  
+   
   return (
     <div>
-        <h1>{artPieceData.info.prev}</h1>
+        <h1>{artPieceData.records.date.map((record, idx) => (record={record}))}</h1>
     </div>
   )
 }
