@@ -4,7 +4,7 @@ function Artpiece({artPieceData}) {
    
   return (
     <div>
-        <h1>{artPieceData.records.date.map((record, idx) => (record={record}))}</h1>
+        <h1>{artPieceData.date}</h1>
     </div>
   )
 }
