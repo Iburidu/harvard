@@ -2,8 +2,10 @@ import React from 'react'
 import Artpiece from './Artpiece'
 
 function Artpieces({artData}) {
+
+
   return (
-    <div>{artData.records.map((artpiece, i) => (
+    <div>{artData.map((artpiece, i) => (
       <Artpiece key={i} artPieceData={artpiece} />
       
       ))}</div>

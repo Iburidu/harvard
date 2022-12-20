@@ -11,12 +11,12 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`https://api.harvardartmuseums.org/image?apikey=${apiKey}&page=10`)
+    fetch(`https://api.harvardartmuseums.org/object?apikey=${apiKey}&page=10`)
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
-          setArtpieces(data);
-          console.log(data);
+          setArtpieces(data.records);
+          console.log(data.records);
         }, 0);
       });
   }, []);
