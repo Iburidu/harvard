@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
+import "../App.css";
 
-function Artpiece({artPieceData}) {
-  
+function Artpiece({ artPieceData }) {
   return (
-    <div>
-        <h1>{artPieceData.culture}</h1>
-        <h2>{artPieceData.title}</h2>
-        {/* <img src={artPieceData.images[0].map(({images, iiifbaseuri}) => ({images: iiifbaseuri}))} alt="{artPieceData.title}" /> */}
-    
+    <div className='card'>
+      <div className="img-container">
+       <img src={artPieceData.baseimageurl
+} alt={artPieceData.title} />
+</div>
+      {/* <h2>{artPieceData.title}</h2> */}
+      <h1> Technique: {artPieceData.technique}</h1>
+
     </div>
-  )
+  );
 }
 
-
-export default Artpiece
+export default Artpiece;
