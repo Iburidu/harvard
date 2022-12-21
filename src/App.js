@@ -1,17 +1,17 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import LoadingMask from './components/LoadingMask';
-import Artpieces from './components/Artpieces';
-
+import "./App.css";
+import { useEffect, useState } from "react";
+import LoadingMask from "./components/LoadingMask";
+import Artpieces from "./components/Artpieces";
 
 function App() {
-  const apiKey = 'ac3cc164-cd23-4a7e-8d4e-7dd367deafb5'
+  const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
   const [artpieces, setArtpieces] = useState([]);
-  const [perPage, setPerPage] = useState(20);
-
+  const [perPage, setPerPage] = useState(10);
 
   useEffect(() => {
-    fetch(`https://api.harvardartmuseums.org/image?apikey=${apiKey}&page=20`)
+    fetch(
+      `https://api.harvardartmuseums.org/image?apikey=${apiKey}&size=${perPage}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
@@ -19,13 +19,20 @@ function App() {
           console.log(data.records);
         }, 1000);
       });
-  }, []);
-
+  }, [perPage]);
 
   return (
-    <div className="App">
-     {artpieces.length > 0 ? (
-        <Artpieces artData={artpieces}  />
+    <div className='App'>
+      <input
+        type='number'
+        value={perPage}
+        onChange={(event) => {
+          setPerPage(event.target.value);
+        }}
+      />
+
+      {artpieces.length > 0 ? (
+        <Artpieces artData={artpieces} />
       ) : (
         <LoadingMask />
       )}
