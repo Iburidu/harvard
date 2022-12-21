@@ -30,7 +30,7 @@ function App() {
           setPerPage(event.target.value);
         }}
       />
-
+<p style={{color: 'red'}}>Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?</p>
       {artpieces.length > 0 ? (
         <Artpieces artData={artpieces} />
       ) : (
