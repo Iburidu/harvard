@@ -10,7 +10,8 @@ function Artpiece({ artPieceData }) {
 </div>
       {/* <h2>{artPieceData.title}</h2> */}
       <h1> Technique: {artPieceData.objectName}</h1>
-      <h2> title: {artPieceData.title}</h2>
+      <h2> Title: {artPieceData.title}</h2>
+      <p>{artPieceData.artistDisplayName}</p>
 
     </div>
   );

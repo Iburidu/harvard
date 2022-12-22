@@ -9,11 +9,11 @@ function App() {
   let min = 3000
   let max = 483163
   const objectId = Math.floor(Math.random() * (max - min) + min) + 1
-  // https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}
+  
 
 
   const [artpieces, setArtpieces] = useState([]);
-  const [perPage, setPerPage] = useState(5);
+  // const [setPage, setPerPage] = useState(5);
   //
   useEffect(() => {
     fetch(
@@ -28,21 +28,21 @@ function App() {
           }, 1000);
         } else {
           setArtpieces()
-          console.log('No image added to the fetch');
+          console.log('No image added to the Object');
         }
       });
-  }, [perPage]);
+  }, []);
 
   return (
     <div className='App'>
-      <input
+      {/* <input
         type='number'
-        value={perPage}
+        value={setPage}
         onChange={(event) => {
           setPerPage(event.target.value);
         }}
-      />
-<p style={{color: 'red'}}>Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?</p>
+      /> */}
+{/* <p style={{color: 'red'}}>Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?</p> */}
       {artpieces.length > 0 ? (
         <Artpieces artData={artpieces} />
       ) : (
