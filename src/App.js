@@ -5,18 +5,26 @@ import Artpieces from "./components/Artpieces";
 
 function App() {
   const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
-  const [artpieces, setArtpieces] = useState([]);
-  const [perPage, setPerPage] = useState(10);
 
+//MET fetc: random számok az objectId-hez, de nem mindegyikhez van kép!
+  let min = 3000
+  let max = 483163
+  const objectId = Math.floor(Math.random() * (max - min) + min) + 1
+  // https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}
+
+
+  const [artpieces, setArtpieces] = useState([]);
+  const [perPage, setPerPage] = useState(5);
+  //
   useEffect(() => {
     fetch(
-      `https://api.harvardartmuseums.org/image?apikey=${apiKey}&size=${perPage}`
+      ` https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`
     )
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
-          setArtpieces(data.records);
-          console.log(data.records);
+          setArtpieces(data.primaryImage);
+          console.log(data.primaryImage);
         }, 1000);
       });
   }, [perPage]);
