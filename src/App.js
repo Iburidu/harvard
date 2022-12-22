@@ -4,8 +4,7 @@ import LoadingMask from "./components/LoadingMask";
 import Artpieces from "./components/Artpieces";
 
 function App() {
-  const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
-
+  
 //MET fetc: random számok az objectId-hez, de nem mindegyikhez van kép!
   let min = 3000
   let max = 483163
@@ -22,10 +21,15 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setTimeout(() => {
-          setArtpieces(data.primaryImage);
-          console.log(data.primaryImage);
-        }, 1000);
+        if (data.primaryImage !== '') {
+          setTimeout(() => {
+            setArtpieces(data);
+            console.log(data);
+          }, 1000);
+        } else {
+          setArtpieces()
+          console.log('No image added to the fetch');
+        }
       });
   }, [perPage]);
 
