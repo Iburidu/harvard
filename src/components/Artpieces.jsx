@@ -2,12 +2,16 @@ import React from 'react'
 import Artpiece from './Artpiece'
 import '../App.css'
 
-function Artpieces({artData}) {
+function Artpieces({artData, filter}) {
 
 
   return (
     <div className='card-container'>
-      {artData.map((artpiece, i) => (
+      {artData
+      // .filter((artpiece) =>
+      // artpiece.technique.toLowerCase().includes(filter.toLowerCase())
+      //   )
+        .map((artpiece, i) => (
       <Artpiece key={i} artPieceData={artpiece} />
       
       ))}</div>

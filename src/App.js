@@ -7,6 +7,7 @@ function App() {
   const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
   const [artpieces, setArtpieces] = useState([]);
   const [perPage, setPerPage] = useState(10);
+  // const [filter, setFilter] = useState("");
 
   useEffect(() => {
     fetch(
@@ -30,7 +31,21 @@ function App() {
           setPerPage(event.target.value);
         }}
       />
-<p style={{color: 'red'}}>Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?</p>
+
+      <p style={{ color: "red" }}>
+        Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?
+      </p>
+
+      {/* <p>Filter: </p>
+      <input
+        type='text'
+        placeholder='filter'
+        value={filter}
+        onChange={(event) => {
+          setFilter(event.target.value);
+        }}
+      /> */}
+
       {artpieces.length > 0 ? (
         <Artpieces artData={artpieces} />
       ) : (
