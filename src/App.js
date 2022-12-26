@@ -5,11 +5,7 @@ import Artpieces from "./components/Artpieces";
 
 function App() {
   
-//MET fetc: random számok az objectId-hez, de nem mindegyikhez van kép!
-  let min = 3000
-  let max = 483163
-  const objectId = Math.floor(Math.random() * (max - min) + min) + 1
-  
+
 
 
   const [artpieces, setArtpieces] = useState([]);
@@ -17,21 +13,15 @@ function App() {
   //
   useEffect(() => {
     fetch(
-      ` https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`
+      ` https://collectionapi.metmuseum.org/public/collection/v1/objects?metadataDate=2018-10-22&departmentIds=3|9|12`
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.primaryImage !== '') {
-          setTimeout(() => {
+                 setTimeout(() => {
             setArtpieces(data);
             console.log(data);
           }, 1000);
-        } else {
-          setArtpieces()
-          console.log('No image added to the Object');
-        }
-      });
-  }, []);
+        } );
 
   return (
     <div className='App'>
