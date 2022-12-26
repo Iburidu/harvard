@@ -2,6 +2,9 @@ import React from "react";
 import "../App.css";
 
 function Artpiece({ artPieceData }) {
+
+
+
   return (
     <div className='card'>
       <div className="img-container">
@@ -11,7 +14,8 @@ function Artpiece({ artPieceData }) {
       {/* <h2>{artPieceData.title}</h2> */}
       <h1> Technique: {artPieceData.objectName}</h1>
       <h2> Title: {artPieceData.title}</h2>
-      <p>{artPieceData.artistDisplayName}</p>
+      <p>Classification: {artPieceData.classification}</p>
+      
 
     </div>
   );

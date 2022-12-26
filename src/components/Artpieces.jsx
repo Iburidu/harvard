@@ -3,6 +3,7 @@ import Artpiece from './Artpiece'
 import '../App.css'
 
 function Artpieces({artData}) {
+  console.log(artData);
 
 
   return (
