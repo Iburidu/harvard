@@ -21,6 +21,8 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
+//képek kiválasztása a fetch-en keresztül visszatérő objektumból
+
         if (data.primaryImage !== '') {
           setTimeout(() => {
             setArtpieces(data);
