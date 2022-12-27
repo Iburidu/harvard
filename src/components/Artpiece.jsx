@@ -13,6 +13,9 @@ function Artpiece({ artPieceData }) {
       <h1> Technique: {artPieceData.objectName}</h1>
       <h2> Title: {artPieceData.title}</h2>
       <p>Classification: {artPieceData.classification}</p>
+
+// is favorite yes or no start
+
       <p className="star"
         onClick={() => {
           setIsFavorite((oldValue) => !oldValue);
@@ -20,6 +23,9 @@ function Artpiece({ artPieceData }) {
       >
         {isFavorite ? "☆" : "★"}
       </p>
+
+      // is favorite yes or no END
+
     </div>
   );
 }
