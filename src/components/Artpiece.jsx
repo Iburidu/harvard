@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import "../App.css";
 
 function Artpiece({ artPieceData }) {
+
+  const [isFavorite, setIsFavorite] = useState(true)
+
   return (
     <div className='card'>
+      <p className="star"
+      onClick={() => {setIsFavorite((oldValue) => !oldValue)}}>
+      {isFavorite ? "☆" : "★"}
+      </p>
       <div className="img-container">
        <img src={artPieceData.baseimageurl
 } alt={artPieceData.title} />
