@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://api.harvardartmuseums.org/video?apikey=${apiKey}&size=${perPage}`
+      `https://api.harvardartmuseums.org/object?apikey=${apiKey}&size=${perPage}`
     )
       .then((res) => res.json())
       .then((data) => {
