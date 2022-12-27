@@ -26,3 +26,8 @@
 img {
   height: 150px;
 }
+
+.star {
+  color: orange;
+  font-size: 50px;
+}
