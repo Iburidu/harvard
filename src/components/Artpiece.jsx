@@ -5,11 +5,13 @@ function Artpiece({ artPieceData }) {
   return (
     <div className='card'>
       <div className="img-container">
-       <img src={artPieceData.baseimageurl
-} alt={artPieceData.title} />
+       <video controls width="100%">
+        <source src={artPieceData.primaryurl}/>
+        Sorry, your browser doesn't support embedded videos.
+       </video>
 </div>
       {/* <h2>{artPieceData.title}</h2> */}
-      <h1> Technique: {artPieceData.technique}</h1>
+      <h1> Description: {artPieceData.description}</h1>
 
     </div>
   );

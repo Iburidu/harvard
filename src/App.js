@@ -2,16 +2,18 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import LoadingMask from "./components/LoadingMask";
 import Artpieces from "./components/Artpieces";
+import LoginPage from "./components/LoginPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
   const [artpieces, setArtpieces] = useState([]);
   const [perPage, setPerPage] = useState(10);
-  // const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     fetch(
-      `https://api.harvardartmuseums.org/image?apikey=${apiKey}&size=${perPage}`
+      `https://api.harvardartmuseums.org/video?apikey=${apiKey}&size=${perPage}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -51,6 +53,7 @@ function App() {
       ) : (
         <LoadingMask />
       )}
+      {/* <LoginPage/> */}
     </div>
   );
 }

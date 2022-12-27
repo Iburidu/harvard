@@ -9,7 +9,7 @@ function Artpieces({artData, filter}) {
     <div className='card-container'>
       {artData
       // .filter((artpiece) =>
-      // artpiece.technique.toLowerCase().includes(filter.toLowerCase())
+      // artpiece.description.toLowerCase().includes(filter.toLowerCase())
       //   )
         .map((artpiece, i) => (
       <Artpiece key={i} artPieceData={artpiece} />
