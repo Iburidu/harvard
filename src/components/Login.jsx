@@ -1,12 +1,13 @@
 import React from 'react'
 import Layout from './Layout'
 
-function LoadingMask() {
+
+function Login() {
   return (
     <Layout>
-    <div>Loading...</div>
+    <div>This will be the login page.</div>
     </Layout>
   )
 }
 
-export default LoadingMask
+export default Login

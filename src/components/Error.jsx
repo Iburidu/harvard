@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from './Layout'
 
-function LoadingMask() {
+function Error() {
   return (
     <Layout>
-    <div>Loading...</div>
+    <div>OooPS! You weren't supposed to see this.</div>
     </Layout>
   )
 }
 
-export default LoadingMask
+export default Error

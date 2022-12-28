@@ -1,11 +1,13 @@
 import React from 'react'
 import Artpiece from './Artpiece'
 import '../App.css'
+import Layout from './Layout'
 
 function Artpieces({artData, filter}) {
 
 
   return (
+    <Layout>
     <div className='card-container'>
       {artData
       // .filter((artpiece) =>
@@ -15,6 +17,7 @@ function Artpieces({artData, filter}) {
       <Artpiece key={i} artPieceData={artpiece} />
       
       ))}</div>
+      </Layout>
   )
 }
 
