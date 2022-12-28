@@ -39,6 +39,7 @@ img {
 }
 
 
+ 
 ul {
   list-style-type: none;
   margin: 0;
@@ -60,9 +61,9 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: rgb(255, 205, 42);
 }
 
 .active {
   background-color: #b6b6b676;
-}
+} 

@@ -3,7 +3,7 @@ import ".././App.css";
 
 function Footer() {
   return (
-    <div className='footer'>Footer sayes: Kopirájt</div>
+    <div className='footer'>Footer says: Kopirájt</div>
   )
 }
 

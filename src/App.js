@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingMask from "./components/LoadingMask";
 import Artpieces from "./components/Artpieces";
@@ -7,12 +7,14 @@ import Login from "./components/Login";
 import Error from "./components/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Button from 'react-bootstrap/Button';
 
-function App(parPage) {
+function App() {
   const apiKey = "ac3cc164-cd23-4a7e-8d4e-7dd367deafb5";
   const [artpieces, setArtpieces] = useState([]);
   const [perPage, setPerPage] = useState(10);
-  // const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
+  const [sortBy, setSortBy] = useState("Date asc");
 
   useEffect(() => {
     fetch(
@@ -28,9 +30,19 @@ function App(parPage) {
 
   console.log(artpieces);
 
+  useEffect(() => {
+    sortBy === "asc"
+      ? setArtpieces([...artpieces].sort((a, b) => (a.date < b.date ? 1 : -1)))
+      : setArtpieces([...artpieces].sort((a, b) => (a.date > b.date ? 1 : -1)))
+      
+  }, [sortBy]);
+
   return (
     <>
       <div className='App'>
+      <p style={{ color: "red" }}>
+          Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?
+        </p>
         <input
           type='number'
           value={perPage}
@@ -38,14 +50,8 @@ function App(parPage) {
             setPerPage(event.target.value);
           }}
         />
-
-        <p style={{ color: "red" }}>
-          Hogy lehet +/- gomb használatával itemet hozzáadni, elvenni?
-        </p>
-        <BrowserRouter>
-          <Routes>
-            {/* <p>Filter: </p>
-      <input
+            <p>Filter: </p>
+      {/* <input
         type='text'
         placeholder='filter'
         value={filter}
@@ -53,6 +59,20 @@ function App(parPage) {
           setFilter(event.target.value);
         }}
       /> */}
+
+
+<Button variant="warning"
+        onClick={() => {
+          sortBy === "Date asc" ? setSortBy("Date desc") : setSortBy("Date asc");
+        }}
+      >
+        {" "}
+        Sort by {sortBy}{" "}
+      </Button>
+
+      
+        <BrowserRouter>
+          <Routes>
 
             <Route
               path='/'
