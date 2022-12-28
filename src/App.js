@@ -15,12 +15,15 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
+       
         setTimeout(() => {
           setArtpieces(data.records);
-          console.log(data.records);
         }, 1000);
-      });
-  }, [perPage]);
+   
+    });
+    }, [perPage])
+
+  console.log(artpieces);
 
   return (
     <div className='App'>
