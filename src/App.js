@@ -47,7 +47,7 @@ function App() {
       .then((data) => {
         setSearchField(data.records);
       }, 1000);
-  }, [perPage]);
+  }, []);
 
   console.log(searchField);
 
