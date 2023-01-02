@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import ".././App.css";
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
 
 function Header() {
@@ -25,8 +26,11 @@ function Header() {
           <li>
             <Link to='/about'>About</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/login'>Login</Link>
+          </li> */}
+          <li>
+            <Link to='/login' alt='Login'>{<VpnKeyIcon/>}</Link>
           </li>
         </ul>
       </nav>
